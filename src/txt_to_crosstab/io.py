@@ -6,10 +6,17 @@ Created on Wed Jan  7 11:19:24 2026
 """
 import csv
 from pathlib import Path
-from .config import SITENAMES, COMPOUND_TO_AQS_CODE 
+import re
+from .config import SITENAMES, COMPOUND_TO_AQS_CODE, TXTFILE_FORMAT
 
 def find_txt_files(root: Path)-> list[Path]:
-    return sorted(root.glob("*.tx1"))   
+    txt_files = root.glob("*.tx1")
+    pattern = re.compile(TXTFILE_FORMAT)
+    files = [f for f in txt_files if pattern.search(f.name)]
+    
+    return sorted(files)
+        
+      
 
 def write_csv(df, site: str, path: Path):
     write_df = df.copy()

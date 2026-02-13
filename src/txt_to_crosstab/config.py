@@ -151,5 +151,6 @@ SAMPLE_TYPES = {'b': 'Blank',
 
 
 FILENAME_FORMAT = r"(?P<site>[a-zA-Z]{2})(?P<sample_type>[a-zA-Z])(?P<month>[a-zA-Z])(?P<day>\d{2})(?P<hour>[a-zA-Z]).dat"
-
-SITENAMES = {'RB': "SITE-RB_RedButte"}
+TXTFILE_FORMAT = r"(?P<site>[a-zA-Z]{2})(?P<sample_type>[a-zA-Z])(?P<month>[a-zA-Z])(?P<day>\d{2})(?P<hour>[a-zA-Z]).tx1"
+SITENAMES = {'RB': "SITE-RB_RedButte",
+             "LP": "SITE-LP_LakePark"}
